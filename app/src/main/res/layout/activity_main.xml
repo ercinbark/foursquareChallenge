@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#E0E0E0"
+    tools:context="ercinbark.challengefoursquare.MainActivity">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingRight="20dp"
+        android:paddingLeft="20dp"
+        android:layout_centerInParent="true">
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:paddingLeft="10dp"
+            android:background="@drawable/edittext_container"
+            android:layout_marginBottom="10dp"
+            android:hint="Exp.Cafe Bar"/>
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:paddingLeft="10dp"
+            android:background="@drawable/edittext_container"
+            android:layout_marginBottom="10dp"
+            android:hint="Close to me"/>
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/button_container"
+            android:drawableLeft="@drawable/search_icon"
+            android:paddingLeft="10dp"
+            android:paddingRight="30dp"
+            android:text="Search"
+            android:textColor="#FFF" />
+    </LinearLayout>
+
+</RelativeLayout>
