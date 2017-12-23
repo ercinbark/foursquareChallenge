@@ -17,6 +17,7 @@
         android:layout_centerInParent="true">
 
         <EditText
+            android:id="@+id/et_exp"
             android:layout_width="match_parent"
             android:layout_height="40dp"
             android:paddingLeft="10dp"
@@ -24,6 +25,7 @@
             android:layout_marginBottom="10dp"
             android:hint="Exp.Cafe Bar"/>
         <EditText
+            android:id="@+id/et_cityOrState"
             android:layout_width="match_parent"
             android:layout_height="40dp"
             android:paddingLeft="10dp"
@@ -32,6 +34,7 @@
             android:hint="Close to me"/>
 
         <Button
+            android:id="@+id/btn_search"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/button_container"
