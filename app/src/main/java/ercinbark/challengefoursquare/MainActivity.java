@@ -40,6 +40,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     Button infDialog_dismiss;
 
     private ProgressDialog dialog;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -75,6 +76,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 if (query.equals("")) {
                     infDialog.show();
                 } else if (et_exp.getText().toString().length() < 3) {
+                    infDialog.show();
+                } else if (!et_exp.getText().toString().matches("[a-zA-Z ]+")) {
                     infDialog.show();
                 } else {
                     getSearch();

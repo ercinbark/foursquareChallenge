@@ -11,7 +11,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textSize="18dp"
-        android:text="Mekan türü boş geçilemez ve en az üç karakter içermelidir,Örn:Cafe,Restaurant..."
+        android:text="Mekan türü boş geçilemez,en az üç karakter içermeli ve sadece alfabetik karakter geçerlidir,Örn:Cafe,Restaurant..."
         android:gravity="center"/>
 
     <Button
