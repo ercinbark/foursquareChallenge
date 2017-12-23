@@ -2,7 +2,11 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="100dp"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:background="#FFF"
+    android:layout_marginBottom="2dp"
+    android:padding="8dp"
+    android:id="@+id/rl_venueDetail">
 
     <LinearLayout
         android:id="@+id/ll_container"
@@ -13,21 +17,36 @@
         <TextView
             android:id="@+id/venueName"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
-        <TextView
-            android:id="@+id/venueAddress"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:text="Vefakar Kafe"
+            android:textSize="18dp"
+            android:textColor="@color/colorPrimary"/>
+
     </LinearLayout>
+
+    <TextView
+        android:id="@+id/venueAddress"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="16dp"
+        android:textColor="#000"
+        android:text="Süleymaniye"
+        android:layout_above="@+id/venueCity" />
     <TextView
         android:id="@+id/venueCity"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true" />
+        android:layout_alignParentBottom="true"
+        android:textSize="16dp"
+        android:textColor="#000"
+        android:text="İstanbul"/>
     <TextView
         android:id="@+id/venueCountry"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:layout_alignParentRight="true" />
+        android:layout_alignParentRight="true"
+        android:textSize="14dp"
+        android:textColor="#9E9E9E"
+        android:text="Türkiye"/>
 </RelativeLayout>
