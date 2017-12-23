@@ -8,7 +8,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.Window;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
@@ -33,23 +32,30 @@ public class SearchResultActivity extends AppCompatActivity implements ShowVenue
 
     Dialog detailDialog;
     TextView detailName,detailAddress,detailCheckCount,detailUserCount,detailTipCount;
-    ImageView img;
 
     MapView map;
     String lat, lng;
     Double mapLat, mapLng;
     GoogleMap mGoogleMap;
-    MarkerOptions marker;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_search_result);
         Bundle bundle = getIntent().getExtras();
         getViews();
+        //arama sonuçları listesini aldık
         venueList = bundle.getParcelableArrayList("model");
         venuesAdapter = new VenuesAdapter(getApplicationContext(), venueList, SearchResultActivity.this);
         rcyVenues.setAdapter(venuesAdapter);
 
+
+    }
+
+    private void getViews() {
+        rcyVenues = findViewById(R.id.rcyVenues);
+        rcyVenues.setHasFixedSize(true);
+        manager = new LinearLayoutManager(getApplicationContext(), LinearLayoutManager.VERTICAL, false);
+        rcyVenues.setLayoutManager(manager);
 
         detailDialog = new Dialog(this);
         detailDialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
@@ -60,25 +66,16 @@ public class SearchResultActivity extends AppCompatActivity implements ShowVenue
         detailCheckCount = detailDialog.findViewById(R.id.detailcheckinsCount);
         detailUserCount = detailDialog.findViewById(R.id.detailusersCount);
         detailTipCount = detailDialog.findViewById(R.id.detailtipCount);
-
         map = (MapView) detailDialog.findViewById(R.id.mapView);
         map.getMapAsync(this);
         map.onCreate(detailDialog.onSaveInstanceState());
         map.onResume();
 
-
-
-    }
-
-    private void getViews() {
-        rcyVenues = findViewById(R.id.rcyVenues);
-        rcyVenues.setHasFixedSize(true);
-        manager = new LinearLayoutManager(getApplicationContext(), LinearLayoutManager.VERTICAL, false);
-        rcyVenues.setLayoutManager(manager);
     }
 
     @Override
     public void showDetail(final VenuesModel venuesModel) {
+        //interfaceden gelen verilerimizi ekranda gösterdik.
         detailDialog.show();
         detailName.setText(venuesModel.getName());
         lat = venuesModel.getLocation().getLat();

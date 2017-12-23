@@ -29,7 +29,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     Button btn_search;
 
     private ApiInterface apiInterface;
-
     String ll = "41.025706,28.976096";
     String client_id = "TCIIHL05HBMV3HBWCWA3ZKEKFVNADVOKYK32D1041XAKX05Q";
     String client_secret = "3I1UXWACJORKM505MDJGQ0OZENXKR3FSJRIW2GZJQWR2SNP3";
@@ -38,7 +37,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     String near, query;
     Dialog infDialog;
     Button infDialog_dismiss;
-
     private ProgressDialog dialog;
 
     @Override
@@ -89,7 +87,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             default:
         }
     }
-
     private void getSearch() {
         dialog.show();
         Call<SearchModel> call = apiInterface.getSearch(ll, client_id, client_secret, v, near, query);
@@ -98,6 +95,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             public void onResponse(Call<SearchModel> call, Response<SearchModel> response) {
                 dialog.dismiss();
                 if (response.body() != null) {
+                    //response true geldi ve result activitesine gönderildi.
                     Intent i = new Intent(MainActivity.this, SearchResultActivity.class);
                     i.putExtra("model", response.body().getResponse().getVenues());
                     startActivity(i);

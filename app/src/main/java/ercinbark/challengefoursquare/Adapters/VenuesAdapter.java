@@ -58,6 +58,7 @@ public class VenuesAdapter extends RecyclerView.Adapter<VenuesAdapter.ViewHolder
         holder.venueDetail.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                //showInterface ile seçtiğimiz position da bulunan objemizin verilerini aldık
                 showVenuDetail.showDetail(venueList.get(position));
             }
         });
